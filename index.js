@@ -303,8 +303,8 @@ function processDoc(opts) {
     if (/^((https?:)?\/\/)/.test(file)) {
       return file;
     } else {
-      fstreams.push(streamFile(file, path.join('css', path.dirname(fileName)), fakeDest));
-      return path.join('css', fileName);
+      fstreams.push(streamFile(file, 'css', fakeDest));
+      return path.join('css', path.basename(fileName));
     }
   });
 
